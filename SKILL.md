@@ -2,7 +2,7 @@
 name: drug-compliance
 slug: drug-compliance
 displayName: 医药合规·法规·专利FTO
-version: 1.0.0
+version: 1.1.0
 author: zhouwei <WeChat: Shanyue0920>
 summary: 医药行业合规与法务结构化分析与落地。7维覆盖推广合规与MLR/反商业贿赂与廉洁/广告与营销合规/数据与隐私合规/专利FTO与IP布局/监管应对与危机/合规体系与培训赋能。严格边界(GA并入准入drug-access、PSP并入销售drug-sales或医学drug-medical、CMC并入注册drug-reg；训练内容转译归drug-training)。引用 drug-base 底座(含专利FTO框架)，强制数据校准(🔍/💭)。
 license: MIT
@@ -74,6 +74,14 @@ allowed-tools: WebSearch, WebFetch, Read, Write
 | 监管应对与危机 | C6 | 飞检、稽查、投诉、不良反应 | 合规主责 |
 | 合规体系与培训赋能 | C7 | 制度、合规培训内容、考核 | 合规主责(内容→training) |
 
+### 3.2.1 references 索引（6 个，按需加载）
+- `references/compliance-mlr-promotion.md` —— C1 推广合规与MLR、C7 合规体系与培训赋能（含自评表）
+- `references/compliance-anticorruption.md` —— C2 反商业贿赂与廉洁、C3/C4 红线（含核对表）
+- `references/compliance-advertising.md` —— C3 广告与营销合规（21号令/广告法16条/自检表）⭐新增
+- `references/compliance-data-privacy.md` —— C4 数据与隐私合规（三法/出境三路径/自评表）⭐新增
+- `references/compliance-fto-ip.md` —— C5 专利FTO与IP、C6 监管应对（含核对表）
+- `references/compliance-regulatory-crisis.md` —— C6 监管应对与危机（飞检/召回/处罚/舆情/响应表）⭐新增
+
 ### 3.3 深度档位
 - 新人模式：详细+输入清单；资深模式：直给结论与风险。默认新人。
 
@@ -88,17 +96,17 @@ allowed-tools: WebSearch, WebFetch, Read, Write
 ### 维C2 反商业贿赂与廉洁 → `references/compliance-anticorruption.md`
 关键动作：医药代表九大禁止行为落地（禁统方/禁回扣/禁承担销售任务等）🔍 → CSO 合作合规标准 → 营销费用监管与廉洁承诺 → 与 drug-sales S6 接口（行为管理清单→本 Skill 出制度与审查）。
 
-### 维C3 广告与营销合规 → `references/compliance-anticorruption.md`
-关键动作：《广告法》第16条逐条核对（禁功效安全性断言/治愈率/对比/代言/处方药大众媒介）🔍 → 药品广告审查（批准文号）→ 店员/POP 话术合规（接 drug-retail R6、drug-training T5）。
+### 维C3 广告与营销合规 → `references/compliance-advertising.md` ⭐（新增加厚）
+关键动作：《广告法》第15/16条逐条核对（禁功效安全性断言/治愈率/对比/代言/处方药大众媒介）🔍 + 21号令第11条八项禁止情形 → 药品广告审查（批准文号与格式）→ 新型媒介（直播/种草/MCN/达人）明示广告与资质 → 店员/POP 话术合规（接 drug-retail R6、drug-training T5）→ 广告合规自检表模板。
 
-### 维C4 数据与隐私合规 → `references/compliance-anticorruption.md`
-关键动作：患者数据/RWE 收集知情同意 → 跨境数据合规（如 GDPRs/人类遗传资源）🔍 → 与处方量脱钩（PAP/随访）→ 接 drug-retail R6、drug-sales S7。
+### 维C4 数据与隐私合规 → `references/compliance-data-privacy.md` ⭐（新增加厚）
+关键动作：PIPL+数据安全法+网络安全法三法框架映射 → 医药特殊数据类型分类分级（患者健康/RWE/临研/基因）→ 数据出境三路径（安全评估/保护认证/标准合同）🔍 → license-out 跨境数据注意 → 数据合规自评表模板。
 
 ### 维C5 专利FTO与IP布局 → `references/compliance-fto-ip.md` ⭐
 关键动作：专利状态核查（化合物/晶型/制剂/用途专利到期与地域）🔍 → FTO 自由实施分析（是否落入他人权利要求，全面覆盖/等同原则）🔍 → 专利四重保护架构（专利20年+PTE/链接/数据保护/市场独占）🔍 → 无效攻防与 Bolar 例外 → 接 drug-base §5、drug-bd 交易 IP 审查。
 
-### 维C6 监管应对与危机 → `references/compliance-fto-ip.md`
-关键动作：飞检/稽查预案（台账/资质/记录）→ 投诉与不良反应上报流程 → 危机分级与发声口径 → 与 drug-reg（变更/再注册）接口。
+### 维C6 监管应对与危机 → `references/compliance-regulatory-crisis.md` ⭐（新增加厚）
+关键动作：飞检/日常监督检查 SOP（迎检/配合/记录）→ 药品召回分级（一/二/三级）与 SOP → 行政处罚应对（陈述申辩/听证/复议）→ 舆情与危机公关 SOP（24h 响应/口径统一/监管沟通）→ 危机分级响应表模板。
 
 ### 维C7 合规体系与培训赋能 → `references/compliance-mlr-promotion.md`
 关键动作：合规制度框架（推广/反贿/广告/数据）→ 合规培训内容产出（九大禁止/案例警示/红线话术）→ **转译交付 drug-training 做课件与考核**（内容归 training，制度归本 Skill）→ 合规考核与行为闭环（接 drug-hr H8）。
