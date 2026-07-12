@@ -4,7 +4,7 @@ last-reviewed: 2026-07-11
 
 # 专利FTO与IP布局 / 监管应对（维C5·C6 · ⭐事实锚定）
 
-> 本 reference 给法务/IP 角色一份"FTO 与专利保护"落地手册。专利号/到期日须以 CNIPA/USPTO/智慧芽为准 🔍，禁凭记忆。基础框架见 drug-base §5。
+> 本 reference 给法务/IP 角色一份"FTO 与专利保护"落地手册。专利号/到期日须以 CNIPA/USPTO/智慧芽为准 🔍，禁凭记忆。基础框架见 foundation.md §3。
 
 ## C5 专利FTO与IP布局（事实锚定 🔍）
 ### C5.1 中国药品专利四重保护架构
