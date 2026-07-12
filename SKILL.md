@@ -2,9 +2,9 @@
 name: drug-compliance
 slug: drug-compliance
 displayName: 医药合规·法规·专利FTO
-version: 1.1.0
+version: 2.0.0
 author: zhouwei <WeChat: Shanyue0920>
-summary: 医药行业合规与法务结构化分析与落地。7维覆盖推广合规与MLR/反商业贿赂与廉洁/广告与营销合规/数据与隐私合规/专利FTO与IP布局/监管应对与危机/合规体系与培训赋能。严格边界(GA并入准入drug-access、PSP并入销售drug-sales或医学drug-medical、CMC并入注册drug-reg；训练内容转译归drug-training)。引用 drug-base 底座(含专利FTO框架)，强制数据校准(🔍/💭)。
+summary: 医药行业合规与法务结构化分析与落地。7维覆盖推广合规与MLR/反商业贿赂与廉洁/广告与营销合规/数据与隐私合规/专利FTO与IP布局/监管应对与危机/合规体系与培训赋能。严格边界(GA并入准入drug-access、PSP并入销售drug-sales或医学drug-medical、CMC并入注册drug-reg；训练内容转译归drug-training)。本 skill 内置知识库(含专利FTO框架)，强制数据校准(🔍/💭)。
 license: MIT
 description: >
   当用户需要从"医药合规与法务"视角审查或设计合规体系、推广材料、交易IP、监管应对时使用。
@@ -12,7 +12,7 @@ description: >
   广告与营销合规(广告法第16条/药品广告审查)、数据与隐私合规(患者数据/RWE/跨境)、
   专利FTO与IP布局(自由实施分析/专利链接/PTE/无效攻防/Bolar)、
   监管应对与危机(飞检/稽查/投诉/不良反应)、合规体系运营与培训赋能(制度/合规培训内容)。
-  引用 drug-base 共享底座（含 §5 专利FTO基础框架），主要复用数据校准规则(🔍/💭)；
+  本 skill 内置共享底座（含 §5 专利FTO基础框架），主要复用数据校准规则(🔍/💭)；
   强制数据校准与边界切分——本 Skill 是"合规与法务主责方"，是 drug-training/drug-sales/drug-retail/drug-hr 的共同合规接口。
   按使用者水平切换新人(详细+输入清单)或资深(精简+直给结论)深度档位。
   触发语示例：「这个推广材料合规吗」「MLR怎么审」「医药代表行为红线有哪些」
@@ -20,11 +20,15 @@ description: >
 allowed-tools: WebSearch, WebFetch, Read, Write
 ---
 
+
+> **🔧 自包含声明**：本 skill 已**完全自包含**，可独立运行，无需安装任何其他 skill 或外部共享底座。
+> 内置共享知识存于本 skill 的 `references/`：临床档案框架与校准规则见 `references/foundation.md`；循证三件套见 `references/evidence-levels.md`、`references/drug-classes.md`、`references/market-methodology.md`；专利FTO框架见 `references/foundation.md` §三。
+
 # 医药合规·法规·专利FTO（drug-compliance）
 
-从"合规与法务"视角，对推广内容、廉洁体系、营销广告、数据隐私、专利IP、监管危机做结构化审查与体系设计——是各业务 skill 的共同合规接口。引用 drug-base 底座（含 §5 专利FTO框架），强制数据校准与边界切分。
+从"合规与法务"视角，对推广内容、廉洁体系、营销广告、数据隐私、专利IP、监管危机做结构化审查与体系设计——是各业务 skill 的共同合规接口。本 skill 内置知识库（含 §5 专利FTO框架），强制数据校准与边界切分。
 
-> 本 skill 引用 drug-base 底座。临床档案按 drug-base §2 框架提取；数据校准遵守 drug-base §3；专利FTO 基础框架见 drug-base §5。
+> 本 skill 本 skill 内置知识库。临床档案按 本 skill references/foundation.md §2 框架提取；数据校准遵守 本 skill references/foundation.md §3；专利FTO 基础框架见 本 skill references/foundation.md §5。
 
 ## 1. 概述
 回答"推广材料合不合规、行为红线在哪、广告文案能不能发、IP 有没有侵权、监管来了怎么应对、合规体系怎么搭"——一个 Skill 扮演"合规与法务守门人"，按需调取 MLR/反贿赂/广告/数据/专利FTO/监管/体系等专长。
@@ -36,7 +40,7 @@ allowed-tools: WebSearch, WebFetch, Read, Write
 - **CMC/生产质量** 并入 **drug-reg（注册）**；
 - 本 Skill 不重复这些职能，只做横向合规审查与法务支撑。
 
-**底座引用**：本 Skill 重点引用 drug-base §5 专利FTO框架；校准规则 §3 为强制共用。
+**底座引用**：本 Skill 重点引用 本 skill references/foundation.md §5 专利FTO框架；校准规则 §3 为强制共用。
 
 ## 2. 两轮工作机制（防遗漏·防编造）
 > 第一轮只采集合规事实与约束，不写结论；第二轮在锁死事实基础上审查/设计；输出前 §10 核查。
@@ -52,7 +56,7 @@ allowed-tools: WebSearch, WebFetch, Read, Write
 | F 交付要求 | 产出物(MLR意见/FTO报告/制度/红线清单) | 用户提供 |
 
 ### 2.2 第二轮：审查/设计编写
-1. ⬜ 项 ≤5 方可进入。2. 调用 drug-base 校准规则 + 本 Skill references。3. 不修改采集事实。4. 法规须回溯字段与来源。
+1. ⬜ 项 ≤5 方可进入。2. 调用 本 skill 内置 校准规则 + 本 Skill references。3. 不修改采集事实。4. 法规须回溯字段与来源。
 
 ### 2.3 第三轮：关键事实终查
 执行 §10 核查清单。
@@ -103,7 +107,7 @@ allowed-tools: WebSearch, WebFetch, Read, Write
 关键动作：PIPL+数据安全法+网络安全法三法框架映射 → 医药特殊数据类型分类分级（患者健康/RWE/临研/基因）→ 数据出境三路径（安全评估/保护认证/标准合同）🔍 → license-out 跨境数据注意 → 数据合规自评表模板。
 
 ### 维C5 专利FTO与IP布局 → `references/compliance-fto-ip.md` ⭐
-关键动作：专利状态核查（化合物/晶型/制剂/用途专利到期与地域）🔍 → FTO 自由实施分析（是否落入他人权利要求，全面覆盖/等同原则）🔍 → 专利四重保护架构（专利20年+PTE/链接/数据保护/市场独占）🔍 → 无效攻防与 Bolar 例外 → 接 drug-base §5、drug-bd 交易 IP 审查。
+关键动作：专利状态核查（化合物/晶型/制剂/用途专利到期与地域）🔍 → FTO 自由实施分析（是否落入他人权利要求，全面覆盖/等同原则）🔍 → 专利四重保护架构（专利20年+PTE/链接/数据保护/市场独占）🔍 → 无效攻防与 Bolar 例外 → 接 本 skill references/foundation.md §5、drug-bd 交易 IP 审查。
 
 ### 维C6 监管应对与危机 → `references/compliance-regulatory-crisis.md` ⭐（新增加厚）
 关键动作：飞检/日常监督检查 SOP（迎检/配合/记录）→ 药品召回分级（一/二/三级）与 SOP → 行政处罚应对（陈述申辩/听证/复议）→ 舆情与危机公关 SOP（24h 响应/口径统一/监管沟通）→ 危机分级响应表模板。
@@ -153,7 +157,7 @@ allowed-tools: WebSearch, WebFetch, Read, Write
 **关键切分说明**：
 - **compliance vs training**：合规课件/案例/红线话术**内容由本 Skill 产出**，但**课件开发与考核归 drug-training**（内容工厂）；本 Skill 出制度与审查结论。
 - **compliance vs sales/retail**：行为红线管理清单归 sales/retail 执行侧，制度与审查归本 Skill。
-- **compliance vs base/bd**：专利FTO 基础框架在 drug-base §5，交易 IP 审查接 drug-bd；本 Skill 做 FTO 分析与无效攻防。
+- **compliance vs base/bd**：专利FTO 基础框架在 本 skill references/foundation.md §5，交易 IP 审查接 drug-bd；本 Skill 做 FTO 分析与无效攻防。
 
 ## 9. 约束与免责
 - 结构完整：查不到内容保留空章节标「待核实（💭）」。
